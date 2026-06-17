@@ -3,3 +3,5 @@ flask-cors==4.0.1
 sqlalchemy>=2.0.51
 pypdf==4.2.0
 gunicorn
+google-auth>=2.29.0
+requests>=2.31.0

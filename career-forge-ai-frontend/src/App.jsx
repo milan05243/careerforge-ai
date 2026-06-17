@@ -10,7 +10,7 @@ import CodingArena from './pages/CodingArena';
 import { Toast } from './components/Toast';
 import { LayoutGrid, FileText, Briefcase, GraduationCap, Cpu, Building2, Code, Terminal, Menu, X } from 'lucide-react';
 
-const API_BASE = 'https://ca94be5c9e38bf.lhr.life';
+const API_BASE = 'https://career-forge-ai-backend-n393.onrender.com';
 
 export default function App() {
   const [page, setPage] = useState('dashboard');

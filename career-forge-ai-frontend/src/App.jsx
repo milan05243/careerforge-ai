@@ -14,7 +14,7 @@ import { LayoutGrid, FileText, Briefcase, GraduationCap, Cpu, Building2, Code, M
 const API_BASE = import.meta.env.VITE_API_BASE || (
   window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:8000'
-    : 'https://ca94be5c9e38bf.lhr.life'
+    : 'https://career-forge-ai-backend-n393.onrender.com'
 );
 
 export default function App() {

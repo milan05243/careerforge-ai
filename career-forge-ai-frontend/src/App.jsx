@@ -135,7 +135,10 @@ export default function App() {
       {!isArenaMode && (
         <footer className="border-t border-white/5 bg-[#03060c] py-6 text-center text-xs text-slate-500 font-medium">
           <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>&copy; 2026 CareerForge AI. Open-source placement preparation portal.</p>
+            <p>
+  © 2026 CareerForge AI | Developed by Milan Choudhary |
+  B.Tech CSE (AI), Medi-Caps University
+</p>
             <div className="flex gap-4">
               <span className="hover:text-indigo-400 cursor-pointer">LinkedIn Project</span>
               <span className="hover:text-indigo-400 cursor-pointer">GitHub Repository</span>

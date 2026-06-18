@@ -8,7 +8,9 @@ export default function Login({ apiBase, onLoginSuccess, triggerToast }) {
   // Initialize Google Identity Services
   useEffect(() => {
     const initGoogleGSI = () => {
-  if (window.google) {
+  console.log("window.google =", window.google);
+
+if (window.google) { 
     // Read client ID from env or fallback to placeholder
     const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || "YOUR_GOOGLE_CLIENT_ID";
 

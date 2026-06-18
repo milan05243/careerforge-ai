@@ -189,7 +189,12 @@ window.google.accounts.id.renderButton(
               ) : (
                 <div className="space-y-4">
                   {/* Google OAuth GSI Button Container */}
-                  <div id="google-signin-btn" className="flex justify-center transition-all hover:scale-[1.02]" />
+                  <div
+  id="google-signin-btn"
+  className="flex justify-center transition-all hover:scale-[1.02] border border-red-500 p-4"
+>
+  GOOGLE BUTTON SHOULD APPEAR HERE
+</div>
                   
                   {/* Developer Quick-Login Bypass */}
                   <div className="relative flex py-2 items-center">

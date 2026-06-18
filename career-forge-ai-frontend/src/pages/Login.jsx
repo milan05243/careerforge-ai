@@ -194,7 +194,12 @@ window.google.accounts.id.renderButton(
 <div
   id="google-signin-btn"
   className="flex justify-center"
-></div>
+  style={{
+    transform: "none",
+    rotate: "0deg",
+    scale: "1"
+  }}
+/>
                   
                   {/* Developer Quick-Login Bypass */}
                   <div className="relative flex py-2 items-center">

@@ -546,14 +546,15 @@ def analyze_resume():
         
         # Save analysis run to ResumeAnalysis history table
         analysis = models.ResumeAnalysis(
-            user_id=user.id,
-            filename=file.filename,
-            target_role=target_role,
-            score=results["score"],
-            skills_found=json.dumps(results["skills_found"]),
-            skills_missing=json.dumps(results["skills_missing"]),
-            suggestions=json.dumps(results["suggestions"])
-        )
+    user_id=user.id,
+    filename=file.filename,
+    target_role=target_role,
+    score=results["ats_score"],
+    skills_found=json.dumps(results["extracted_skills"]),
+    skills_missing=json.dumps(results["missing_skills"]),
+    suggestions=json.dumps(results["suggestions"])
+)
+        
         db.add(analysis)
         db.commit()
         

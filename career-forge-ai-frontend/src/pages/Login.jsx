@@ -183,7 +183,7 @@ window.google.accounts.id.renderButton(
 
             {/* Google authentication button container */}
             <div className="flex flex-col items-center gap-4 py-4">
-              {true? (
+              {loading ? (
   <div className="flex flex-col items-center gap-3 py-4">
     <div className="h-6 w-6 rounded-full border-2 border-indigo-500/20 border-t-indigo-500 animate-spin" />
     <span className="text-slate-400 text-xs font-medium">

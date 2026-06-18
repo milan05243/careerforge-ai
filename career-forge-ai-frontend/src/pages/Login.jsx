@@ -21,17 +21,19 @@ export default function Login({ apiBase, onLoginSuccess, triggerToast }) {
             auto_select: false
           });
 
-          window.google.accounts.id.renderButton(
-            document.getElementById("google-signin-btn"),
-            { 
-              theme: "filled_dark", 
-              size: "large", 
-              width: 320, 
-              text: "continue_with",
-              shape: "pill",
-              logo_alignment: "left"
-            }
-          );
+          alert("Render Button Reached");
+
+window.google.accounts.id.renderButton(
+  document.getElementById("google-signin-btn"),
+  {
+    theme: "filled_dark",
+    size: "large",
+    width: 320,
+    text: "continue_with",
+    shape: "pill",
+    logo_alignment: "left"
+  }
+);
         } catch (err) {
           console.warn("Google OAuth init warning: Check VITE_GOOGLE_CLIENT_ID config.", err);
         }

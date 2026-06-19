@@ -240,7 +240,6 @@ export default function Dashboard({ apiBase, authHeaders }) {
           </CardHeader>
 
           <CardBody className="space-y-4 text-sm">
-            <CardBody className="space-y-4 text-sm">
 
   {stats.quizTotal > 0 && (
     <div className="flex items-center gap-3 text-amber-300">
@@ -321,6 +320,8 @@ export default function Dashboard({ apiBase, authHeaders }) {
   )}
 
 </CardBody>
+</Card>
+
         <Card hoverEffect={false}>
           <CardHeader>
             <CardTitle>DSA Sheet Completion Status</CardTitle>

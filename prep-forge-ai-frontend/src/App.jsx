@@ -114,10 +114,10 @@ export default function App() {
     switch (page) {
       case 'dashboard':
         return <Dashboard
-  apiBase={apiBase}
+  apiBase={API_BASE}
   authHeaders={authHeaders}
   setPage={setPage}
-/>;
+ />;
       case 'resume':
         return <ResumeAnalyzer apiBase={API_BASE} authHeaders={authHeaders} triggerToast={triggerToast} />;
       case 'jobs':

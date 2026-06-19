@@ -158,7 +158,7 @@ export default function App() {
             <div className="h-9 w-9 rounded-lg bg-gradient-to-tr from-indigo-600 to-indigo-400 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-indigo-600/30">
               C
             </div>
-            <span>CareerForge <span className="text-indigo-400 font-extrabold text-sm uppercase px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 ml-1">AI</span></span>
+            <span>PrepForge <span className="text-indigo-400 font-extrabold text-sm uppercase px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 ml-1">AI</span></span>
           </div>
 
           {/* Desktop Nav menu */}
@@ -269,7 +269,7 @@ export default function App() {
       {!isArenaMode && (
         <footer className="border-t border-white/5 bg-[#03060c] py-6 text-center text-xs text-slate-500 font-medium">
           <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>&copy; 2026 CareerForge AI. Open-source placement preparation portal.</p>
+            <p>&copy; 2026 PrepForge AI. Open-source placement preparation portal.</p>
             <div className="flex gap-4">
               <span className="hover:text-indigo-400 cursor-pointer">LinkedIn Project</span>
               <span className="hover:text-indigo-400 cursor-pointer">GitHub Repository</span>

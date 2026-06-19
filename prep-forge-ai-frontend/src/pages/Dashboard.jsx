@@ -55,6 +55,10 @@ const [dsaRes, quizRes, interviewRes, resumeRes, streakRes] =
         const interviewRaw = await interviewRes.json();
         const resumeRaw = await resumeRes.json();
         const streakRaw = await streakRes.json();
+        const streakData =
+  streakRaw && typeof streakRaw === "object"
+    ? streakRaw
+    : { streak: 0 };
 
         const dsaData = Array.isArray(dsaRaw) ? dsaRaw : [];
         const quizData = Array.isArray(quizRaw) ? quizRaw : [];

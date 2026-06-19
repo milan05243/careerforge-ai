@@ -200,6 +200,83 @@ const COMPANIES = [
   process: "Online Assessment -> 2-3 Technical Interviews (C++, OS, CN, DSA) -> HR Round.",
   rounds: "1 OA, 3 Technical, 1 HR",
   roadmap: "Advanced C++, Operating Systems, Computer Networks, Memory Management, Trees and Graph algorithms."
+},
+{
+  id: "ibm",
+  name: "IBM",
+  logoText: "I",
+  color: "bg-blue-700",
+  desc: "Global technology company specializing in cloud computing, AI, and enterprise software solutions.",
+  eligibility: "6.5+ CGPA. Open to CSE, IT, ECE, and allied branches. No active backlogs preferred.",
+  process: "Online Assessment (Coding + Aptitude) -> Technical Interview -> HR Interview.",
+  rounds: "1 OA, 1 Technical, 1 HR",
+  roadmap: "Java, DBMS, OOPs, SQL, DSA basics, Aptitude preparation."
+},
+{
+  id: "cognizant",
+  name: "Cognizant",
+  logoText: "Cg",
+  color: "bg-cyan-700",
+  desc: "Leading IT services and consulting company recruiting through campus drives and GenC programs.",
+  eligibility: "60% throughout academics. Open to all engineering branches. No active backlogs.",
+  process: "Online Assessment -> Technical Interview -> HR Interview.",
+  rounds: "1 OA, 1 Technical, 1 HR",
+  roadmap: "Aptitude, SQL, OOPs, DBMS, basic coding and communication skills."
+},
+{
+  id: "capgemini",
+  name: "Capgemini",
+  logoText: "Cp",
+  color: "bg-indigo-600",
+  desc: "Multinational IT consulting and services company with strong campus recruitment programs.",
+  eligibility: "60% throughout academics. No active backlogs. Open to most engineering streams.",
+  process: "Technical Assessment -> Game-Based Assessment -> Technical Interview -> HR Interview.",
+  rounds: "2 Assessments, 1 Technical, 1 HR",
+  roadmap: "Pseudo code, Aptitude, SQL, DBMS, OOPs, communication skills."
+},
+{
+  id: "wipro",
+  name: "Wipro",
+  logoText: "W",
+  color: "bg-purple-700",
+  desc: "Global information technology company recruiting through Elite NTH and other hiring programs.",
+  eligibility: "60% throughout academics. Maximum 1 backlog allowed in some roles.",
+  process: "Online Assessment -> Voice Assessment -> Technical Interview -> HR Interview.",
+  rounds: "1 OA, 1 Voice, 1 Technical, 1 HR",
+  roadmap: "Aptitude, Verbal Ability, Programming Fundamentals, DBMS, OOPs."
+},
+{
+  id: "hcl",
+  name: "HCLTech",
+  logoText: "H",
+  color: "bg-orange-600",
+  desc: "Leading IT services company focusing on digital transformation and software engineering.",
+  eligibility: "60% throughout academics. Open to CSE, IT, ECE and related branches.",
+  process: "Online Test -> Technical Interview -> HR Round.",
+  rounds: "1 OA, 1 Technical, 1 HR",
+  roadmap: "Core Java, SQL, DBMS, Aptitude, Data Structures basics."
+},
+{
+  id: "techmahindra",
+  name: "Tech Mahindra",
+  logoText: "TM",
+  color: "bg-red-800",
+  desc: "Indian multinational IT services company offering software development and consulting services.",
+  eligibility: "60% throughout academics. Open to all engineering streams.",
+  process: "Online Aptitude Test -> Technical Interview -> HR Interview.",
+  rounds: "1 OA, 1 Technical, 1 HR",
+  roadmap: "Aptitude, Communication Skills, Basic Programming, OOPs and DBMS."
+},
+{
+  id: "servicenow",
+  name: "ServiceNow",
+  logoText: "SN",
+  color: "bg-emerald-700",
+  desc: "Cloud-based software company providing enterprise workflow automation solutions.",
+  eligibility: "7.0+ CGPA. Primarily open to CSE and IT students. No active backlogs.",
+  process: "Online Coding Assessment -> 2 Technical Interviews -> Hiring Manager Round.",
+  rounds: "1 OA, 2 Technical, 1 Hiring Manager",
+  roadmap: "DSA, OOPs, DBMS, Operating Systems, Low-Level Design, Problem Solving."
 }
 ];
 

@@ -14,6 +14,7 @@ import {
 
 export default function Dashboard({ apiBase, authHeaders }) {
   const [loading, setLoading] = useState(true);
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
 
   const [stats, setStats] = useState({
     dsaDone: 0,
@@ -122,6 +123,21 @@ export default function Dashboard({ apiBase, authHeaders }) {
           Ready to Forge
         </div>
       </div>
+
+      <Card hoverEffect={false}>
+  <CardBody>
+    <h3 className="text-xl font-bold text-white">
+      Welcome back, {user.name?.split(" ")[0] || "Learner"} 👋
+    </h3>
+
+    <p className="text-slate-400 mt-2">
+      Stay consistent, practice daily, and keep forging your placement journey.
+      Every quiz, mock interview, and DSA problem brings you one step closer
+      to your dream offer.
+    </p>
+  </CardBody>
+</Card>
+
 
       {/* Top Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
@@ -314,6 +330,100 @@ export default function Dashboard({ apiBase, authHeaders }) {
           </CardBody>
         </Card>
       </div>
+      {/* Quick Actions + Weekly Goals */}
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+  <Card hoverEffect={false}>
+    <CardHeader>
+      <CardTitle>Quick Actions</CardTitle>
+    </CardHeader>
+
+    <CardBody className="grid grid-cols-2 gap-4">
+
+      <button className="p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500/20 transition">
+        <div className="text-2xl">📚</div>
+        <div className="mt-2 text-sm font-semibold text-white">
+          Practice Quiz
+        </div>
+      </button>
+
+      <button className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition">
+        <div className="text-2xl">🎤</div>
+        <div className="mt-2 text-sm font-semibold text-white">
+          Start Interview
+        </div>
+      </button>
+
+      <button className="p-4 rounded-xl bg-sky-500/10 border border-sky-500/20 hover:bg-sky-500/20 transition">
+        <div className="text-2xl">📄</div>
+        <div className="mt-2 text-sm font-semibold text-white">
+          Analyze Resume
+        </div>
+      </button>
+
+      <button className="p-4 rounded-xl bg-orange-500/10 border border-orange-500/20 hover:bg-orange-500/20 transition">
+        <div className="text-2xl">💻</div>
+        <div className="mt-2 text-sm font-semibold text-white">
+          Solve DSA
+        </div>
+      </button>
+
+    </CardBody>
+  </Card>
+
+  <Card hoverEffect={false}>
+    <CardHeader>
+      <CardTitle>Weekly Goal Tracker</CardTitle>
+    </CardHeader>
+
+    <CardBody className="space-y-6">
+
+      <div>
+        <div className="flex justify-between text-sm text-slate-300 mb-2">
+          <span>DSA Goal</span>
+          <span>{stats.dsaDone}/10</span>
+        </div>
+
+        <div className="h-2 rounded-full bg-white/5">
+          <div
+            className="h-2 rounded-full bg-indigo-500"
+            style={{ width: `${Math.min(stats.dsaDone * 10, 100)}%` }}
+          />
+        </div>
+      </div>
+
+      <div>
+        <div className="flex justify-between text-sm text-slate-300 mb-2">
+          <span>Mock Interviews</span>
+          <span>{stats.interviews}/5</span>
+        </div>
+
+        <div className="h-2 rounded-full bg-white/5">
+          <div
+            className="h-2 rounded-full bg-emerald-500"
+            style={{ width: `${Math.min(stats.interviews * 20, 100)}%` }}
+          />
+        </div>
+      </div>
+
+      <div>
+        <div className="flex justify-between text-sm text-slate-300 mb-2">
+          <span>Resume Analyses</span>
+          <span>{stats.resumes}/3</span>
+        </div>
+
+        <div className="h-2 rounded-full bg-white/5">
+          <div
+            className="h-2 rounded-full bg-sky-500"
+            style={{ width: `${Math.min(stats.resumes * 33, 100)}%` }}
+          />
+        </div>
+      </div>
+
+    </CardBody>
+  </Card>
+
+</div>
     </div>
   );
 }

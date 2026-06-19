@@ -403,7 +403,7 @@ const [dsaRes, quizRes, interviewRes, resumeRes, streakRes] =
     <CardBody className="grid grid-cols-2 gap-4">
 
       <button
-  onClick={() => setPage('quiz')}
+  onClick={() => setPage('prep')}
   className="p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500/20 transition"
 >
         <div className="text-2xl">📚</div>
@@ -413,7 +413,7 @@ const [dsaRes, quizRes, interviewRes, resumeRes, streakRes] =
       </button>
 
       <button
-  onClick={() => setPage('mock')}
+  onClick={() => setPage('interview')}
   className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition"
 >
         <div className="text-2xl">🎤</div>

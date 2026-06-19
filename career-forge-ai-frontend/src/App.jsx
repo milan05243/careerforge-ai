@@ -75,7 +75,6 @@ export default function App() {
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: <LayoutGrid className="h-4.5 w-4.5" /> },
     { id: 'resume', label: 'AI Resume', icon: <FileText className="h-4.5 w-4.5" /> },
-    { id: 'jobs', label: 'Job Portal', icon: <Briefcase className="h-4.5 w-4.5" /> },
     { id: 'prep', label: 'Prep Hub', icon: <GraduationCap className="h-4.5 w-4.5" /> },
     { id: 'interview', label: 'AI Mock', icon: <Cpu className="h-4.5 w-4.5" /> },
     { id: 'companies', label: 'Companies', icon: <Building2 className="h-4.5 w-4.5" /> },

@@ -13,7 +13,37 @@ INTERVIEW_QA = {
             "question": "Explain the ACID properties in transactions. Why are they critical?",
             "keywords": ["acid", "atomicity", "consistency", "isolation", "durability", "transaction", "rollback", "commit", "integrity"],
             "ideal": "ACID properties ensure transaction reliability. Atomicity guarantees 'all or nothing'. Consistency keeps database states valid. Isolation runs transactions concurrently without interference. Durability ensures committed changes survive crashes."
-        }
+        },
+        {
+    "id": "db-q3",
+    "question": "What is the difference between a Primary Key and a Foreign Key?",
+    "keywords": ["primary key", "foreign key", "unique", "relationship", "table", "reference", "constraint"],
+    "ideal": "A Primary Key uniquely identifies each record in a table and cannot contain NULL values. A Foreign Key establishes a relationship between two tables by referencing the Primary Key of another table."
+},
+{
+    "id": "db-q4",
+    "question": "What are SQL Joins? Explain different types of joins.",
+    "keywords": ["join", "inner join", "left join", "right join", "full join", "matching", "table"],
+    "ideal": "SQL Joins are used to combine rows from multiple tables. INNER JOIN returns matching rows, LEFT JOIN returns all rows from left table, RIGHT JOIN returns all rows from right table, and FULL OUTER JOIN returns all rows from both tables."
+},
+{
+    "id": "db-q5",
+    "question": "What is indexing in DBMS? What are its advantages and disadvantages?",
+    "keywords": ["index", "search", "b-tree", "performance", "query", "retrieval"],
+    "ideal": "Indexing is a technique used to improve data retrieval speed. It uses structures like B-Trees. Advantages include faster queries, while disadvantages include additional storage and slower insert/update operations."
+},
+{
+    "id": "db-q6",
+    "question": "What is the difference between DELETE, DROP, and TRUNCATE commands?",
+    "keywords": ["delete", "drop", "truncate", "table", "rows", "ddl", "dml"],
+    "ideal": "DELETE removes specific rows and can be rolled back. TRUNCATE removes all rows while preserving table structure. DROP completely removes the table structure and data."
+},
+{
+    "id": "db-q7",
+    "question": "What is a transaction in DBMS? Explain COMMIT and ROLLBACK.",
+    "keywords": ["transaction", "commit", "rollback", "consistency", "atomicity", "database"],
+    "ideal": "A transaction is a sequence of database operations performed as a single unit. COMMIT permanently saves changes, while ROLLBACK undoes changes if an error occurs."
+}
     ],
     "OS": [
         {

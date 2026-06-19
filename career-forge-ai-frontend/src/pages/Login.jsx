@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { LayoutGrid, FileText, Cpu, Code, ShieldAlert, CheckCircle2 } from 'lucide-react';
-
+import {
+  LayoutGrid,
+  FileText,
+  Cpu,
+  Code,
+  ShieldAlert,
+  CheckCircle2,
+  Hammer
+} from 'lucide-react';
 export default function Login({ apiBase, onLoginSuccess, triggerToast }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -113,9 +120,9 @@ window.google.accounts.id.renderButton(
           <div className="space-y-6">
             {/* Logo */}
             <div className="flex items-center gap-3 font-black text-2xl tracking-tight text-white">
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 flex items-center justify-center text-white font-black shadow-lg shadow-indigo-600/30">
-                C
-              </div>
+              <div className="h-12 w-12 rounded-xl bg-gradient-to-tr from-orange-500 via-amber-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-orange-500/40">
+  <Hammer className="h-6 w-6 text-white" />
+</div>
               <span>PrepForge <span className="text-indigo-400 font-extrabold text-sm uppercase px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 ml-1">AI</span></span>
             </div>
 

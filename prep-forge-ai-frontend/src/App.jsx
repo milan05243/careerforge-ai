@@ -113,7 +113,11 @@ export default function App() {
   const renderPage = () => {
     switch (page) {
       case 'dashboard':
-        return <Dashboard apiBase={API_BASE} authHeaders={authHeaders} />;
+        return <Dashboard
+  apiBase={apiBase}
+  authHeaders={authHeaders}
+  setPage={setPage}
+/>;
       case 'resume':
         return <ResumeAnalyzer apiBase={API_BASE} authHeaders={authHeaders} triggerToast={triggerToast} />;
       case 'jobs':

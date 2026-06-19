@@ -12,7 +12,11 @@ import {
   FileText
 } from 'lucide-react';
 
-export default function Dashboard({ apiBase, authHeaders }) {
+export default function Dashboard({
+  apiBase,
+  authHeaders,
+  setPage
+})  {
   const [loading, setLoading] = useState(true);
   const user = JSON.parse(localStorage.getItem("user") || "{}");
 
@@ -398,28 +402,40 @@ const [dsaRes, quizRes, interviewRes, resumeRes, streakRes] =
 
     <CardBody className="grid grid-cols-2 gap-4">
 
-      <button className="p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500/20 transition">
+      <button
+  onClick={() => setPage('quiz')}
+  className="p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20 hover:bg-indigo-500/20 transition"
+>
         <div className="text-2xl">📚</div>
         <div className="mt-2 text-sm font-semibold text-white">
           Practice Quiz
         </div>
       </button>
 
-      <button className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition">
+      <button
+  onClick={() => setPage('mock')}
+  className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition"
+>
         <div className="text-2xl">🎤</div>
         <div className="mt-2 text-sm font-semibold text-white">
           Start Interview
         </div>
       </button>
 
-      <button className="p-4 rounded-xl bg-sky-500/10 border border-sky-500/20 hover:bg-sky-500/20 transition">
+      <button
+  onClick={() => setPage('resume')}
+  className="p-4 rounded-xl bg-sky-500/10 border border-sky-500/20 hover:bg-sky-500/20 transition"
+>
         <div className="text-2xl">📄</div>
         <div className="mt-2 text-sm font-semibold text-white">
           Analyze Resume
         </div>
       </button>
 
-      <button className="p-4 rounded-xl bg-orange-500/10 border border-orange-500/20 hover:bg-orange-500/20 transition">
+      <button
+  onClick={() => setPage('dsa')}
+  className="p-4 rounded-xl bg-orange-500/10 border border-orange-500/20 hover:bg-orange-500/20 transition"
+>
         <div className="text-2xl">💻</div>
         <div className="mt-2 text-sm font-semibold text-white">
           Solve DSA

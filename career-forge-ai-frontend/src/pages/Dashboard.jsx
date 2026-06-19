@@ -240,38 +240,87 @@ export default function Dashboard({ apiBase, authHeaders }) {
           </CardHeader>
 
           <CardBody className="space-y-4 text-sm">
-            <div className="flex items-center gap-3 text-amber-300">
-              <Trophy className="h-5 w-5" />
-              <span>🏆 First Quiz Completed</span>
-            </div>
+            <CardBody className="space-y-4 text-sm">
 
-            <div className="flex items-center gap-3 text-emerald-300">
-              <Flame className="h-5 w-5" />
-              <span>🔥 Started Mock Interview Practice</span>
-            </div>
+  {stats.quizTotal > 0 && (
+    <div className="flex items-center gap-3 text-amber-300">
+      <Trophy className="h-5 w-5" />
+      <span>🏆 First Quiz Completed</span>
+    </div>
+  )}
 
-            <div className="flex items-center gap-3 text-indigo-300">
-              <Code className="h-5 w-5" />
-              <span>💻 DSA Journey Started</span>
-            </div>
+  {stats.quizTotal >= 50 && (
+    <div className="flex items-center gap-3 text-yellow-300">
+      <Award className="h-5 w-5" />
+      <span>🎯 Attempted 50 Quiz Questions</span>
+    </div>
+  )}
 
-            <div className="flex items-center gap-3 text-sky-300">
-              <Award className="h-5 w-5" />
-              <span>🚀 Welcome to PrepForge AI</span>
-            </div>
+  {stats.interviews > 0 && (
+    <div className="flex items-center gap-3 text-emerald-300">
+      <Flame className="h-5 w-5" />
+      <span>🔥 Started Mock Interview Practice</span>
+    </div>
+  )}
 
-            <div className="flex items-center gap-3 text-purple-300">
-              <Mic className="h-5 w-5" />
-              <span>🎤 Complete 5 Mock Interviews</span>
-            </div>
+  {stats.interviews >= 5 && (
+    <div className="flex items-center gap-3 text-purple-300">
+      <Mic className="h-5 w-5" />
+      <span>🎤 Completed 5 Mock Interviews</span>
+    </div>
+  )}
 
-            <div className="flex items-center gap-3 text-orange-300">
-              <FileText className="h-5 w-5" />
-              <span>📄 Analyze Your First Resume</span>
-            </div>
-          </CardBody>
-        </Card>
+  {stats.interviews >= 10 && (
+    <div className="flex items-center gap-3 text-pink-300">
+      <Mic className="h-5 w-5" />
+      <span>🚀 Interview Master - 10 Sessions</span>
+    </div>
+  )}
 
+  {stats.dsaDone > 0 && (
+    <div className="flex items-center gap-3 text-indigo-300">
+      <Code className="h-5 w-5" />
+      <span>💻 DSA Journey Started</span>
+    </div>
+  )}
+
+  {stats.dsaDone >= 10 && (
+    <div className="flex items-center gap-3 text-cyan-300">
+      <Code className="h-5 w-5" />
+      <span>📚 Solved 10 DSA Problems</span>
+    </div>
+  )}
+
+  {stats.dsaDone >= 50 && (
+    <div className="flex items-center gap-3 text-blue-300">
+      <Code className="h-5 w-5" />
+      <span>🏅 DSA Explorer - 50 Problems Solved</span>
+    </div>
+  )}
+
+  {stats.resumes > 0 && (
+    <div className="flex items-center gap-3 text-orange-300">
+      <FileText className="h-5 w-5" />
+      <span>📄 First Resume Analyzed</span>
+    </div>
+  )}
+
+  {stats.resumes >= 5 && (
+    <div className="flex items-center gap-3 text-green-300">
+      <FileText className="h-5 w-5" />
+      <span>⭐ Resume Optimizer - 5 Analyses</span>
+    </div>
+  )}
+
+  {(stats.quizTotal +
+    stats.interviews +
+    stats.dsaDone) === 0 && (
+    <div className="text-slate-400 text-center py-6">
+      Start practicing to unlock achievements 🚀
+    </div>
+  )}
+
+</CardBody>
         <Card hoverEffect={false}>
           <CardHeader>
             <CardTitle>DSA Sheet Completion Status</CardTitle>

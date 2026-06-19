@@ -133,8 +133,10 @@ const [dsaRes, quizRes, interviewRes, resumeRes, streakRes] =
       <Card hoverEffect={false}>
   <CardBody>
     <h3 className="text-xl font-bold text-white">
-      Welcome back, {user.name?.split(" ")[0] || "Learner"} 👋
-    </h3>
+  {stats.streak > 0
+    ? `Welcome back, ${user.name?.split(" ")[0] || "Learner"} 👋`
+    : `Welcome to PrepForge, ${user.name?.split(" ")[0] || "Learner"} 🚀`}
+</h3>
 
     <p className="text-slate-400 mt-2">
       Stay consistent, practice daily, and keep forging your placement journey.

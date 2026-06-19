@@ -139,10 +139,10 @@ const [dsaRes, quizRes, interviewRes, resumeRes, streakRes] =
 </h3>
 
     <p className="text-slate-400 mt-2">
-      Stay consistent, practice daily, and keep forging your placement journey.
-      Every quiz, mock interview, and DSA problem brings you one step closer
-      to your dream offer.
-    </p>
+  {stats.streak > 0
+    ? "Stay consistent, practice daily, and keep forging your placement journey. Every quiz, mock interview, and DSA problem brings you one step closer to your dream offer."
+    : "Start your placement preparation journey today. Practice DSA, take quizzes, and ace your dream interviews with PrepForge AI."}
+</p>
   </CardBody>
 </Card>
 

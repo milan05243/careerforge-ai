@@ -84,7 +84,7 @@ export default function Dashboard({ apiBase, authHeaders }) {
       {/* Top Welcome Bar */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-extrabold text-white tracking-tight">Your CareerForge Workspace</h2>
+          <h2 className="text-3xl font-extrabold text-white tracking-tight">Your PrepForge Workspace</h2>
           <p className="text-slate-400 text-sm mt-1">Real-time stats tracking, automated resume checks, and coding prep hub.</p>
         </div>
         <div className="flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 px-4 py-2 rounded-full text-indigo-300 font-semibold text-sm w-fit">

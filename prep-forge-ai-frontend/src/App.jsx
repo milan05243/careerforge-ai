@@ -70,6 +70,8 @@ export default function App() {
 
   // Construct Auth Headers
   const authHeaders = user ? { 'Authorization': `Bearer ${user.id}` } : {};
+  console.log("User:", user);
+console.log("Auth Headers:", authHeaders);
 
   // Navigation items config
   const navItems = [

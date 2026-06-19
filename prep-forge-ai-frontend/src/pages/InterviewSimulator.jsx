@@ -18,7 +18,8 @@ export default function InterviewSimulator({ apiBase, authHeaders, triggerToast 
         headers: { ...authHeaders }
       });
       const data = await res.json();
-      setHistory(data);
+
+setHistory(Array.isArray(data) ? data : []);
     } catch (err) {
       console.error(err);
     } finally {
@@ -214,7 +215,7 @@ export default function InterviewSimulator({ apiBase, authHeaders, triggerToast 
               ) : history.length === 0 ? (
                 <div className="text-center text-slate-600 text-xs py-8">No mock records available.</div>
               ) : (
-                history.map(session => (
+                (Array.isArray(history) ? history : []).map(session => (
                   <div key={session.session_id} className="p-3 border border-white/5 rounded-lg bg-white/[0.01]">
                     <div className="flex justify-between text-[10px] uppercase font-bold tracking-wider mb-1">
                       <span className="text-indigo-400">{session.topic}</span>

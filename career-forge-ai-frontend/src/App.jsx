@@ -9,7 +9,7 @@ import DsaTracker from './pages/DsaTracker';
 import CodingArena from './pages/CodingArena';
 import Login from './pages/Login';
 import { Toast } from './components/Toast';
-import { LayoutGrid, FileText, Briefcase, GraduationCap, Cpu, Building2, Code, Menu, X, LogOut, User as UserIcon } from 'lucide-react';
+import { LayoutGrid, FileText, Briefcase, GraduationCap, Cpu, Building2, Code, Menu, X, LogOut, User as UserIcon, Hammer } from 'lucide-react';
 
 const API_BASE = import.meta.env.VITE_API_BASE || (
   window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
@@ -155,9 +155,9 @@ export default function App() {
             onClick={() => setPage('dashboard')} 
             className="flex items-center gap-2.5 cursor-pointer font-black text-xl tracking-tight text-white select-none"
           >
-            <div className="h-9 w-9 rounded-lg bg-gradient-to-tr from-indigo-600 to-indigo-400 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-indigo-600/30">
-              C
-            </div>
+            <div className="h-10 w-10 rounded-lg bg-gradient-to-tr from-orange-500 via-amber-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-orange-500/40">
+  <Hammer className="h-7 w-7 text-white" />
+</div>
             <span>PrepForge <span className="text-indigo-400 font-extrabold text-sm uppercase px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 ml-1">AI</span></span>
           </div>
 

@@ -121,7 +121,7 @@ window.google.accounts.id.renderButton(
             {/* Logo */}
             <div className="flex items-center gap-3 font-black text-2xl tracking-tight text-white">
               <div className="h-12 w-12 rounded-xl bg-gradient-to-tr from-orange-500 via-amber-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-orange-500/40">
-  <Hammer className="h-6 w-6 text-white" />
+  <Hammer className="h-7 w-7 text-white" />
 </div>
               <span>PrepForge <span className="text-indigo-400 font-extrabold text-sm uppercase px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 ml-1">AI</span></span>
             </div>

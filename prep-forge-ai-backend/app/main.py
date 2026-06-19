@@ -8,6 +8,7 @@ import subprocess
 import sys
 import json
 from datetime import datetime
+from datetime import timedelta
 
 from .database import engine, SessionLocal, Base
 from . import models
@@ -104,16 +105,34 @@ def get_db():
 # Helper to fetch current authenticated user
 def get_current_user(db: Session):
     auth_header = request.headers.get("Authorization")
+
+    print("AUTH HEADER:", auth_header)
+
     if not auth_header or not auth_header.startswith("Bearer "):
+        print("No auth header found")
         return None
+
     user_id_str = auth_header.split(" ")[1]
+
     try:
         user_id = int(user_id_str)
-        return db.query(models.User).filter(models.User.id == user_id).first()
+
+        user = db.query(models.User).filter(
+            models.User.id == user_id
+        ).first()
+
+        print("FOUND USER:", user)
+
+        return user
+
     except ValueError:
-        # Fallback to check by sub/google_id directly if header contains it
-        return db.query(models.User).filter(models.User.google_id == user_id_str).first()
-    from datetime import timedelta
+        user = db.query(models.User).filter(
+            models.User.google_id == user_id_str
+        ).first()
+
+        print("FOUND USER BY GOOGLE ID:", user)
+
+        return user
 
 def update_user_streak(user, db):
     today = datetime.utcnow().date()

@@ -248,6 +248,21 @@ def debug_users():
     finally:
         db.close()
 
+@app.get("/debug/stats")
+def debug_stats():
+    db = SessionLocal()
+
+    try:
+        return {
+            "users": db.query(models.User).count(),
+            "quiz_scores": db.query(models.QuizScore).count(),
+            "interview_sessions": db.query(models.InterviewSession).count(),
+            "resume_analyses": db.query(models.ResumeAnalysis).count(),
+            "dsa_progress": db.query(models.UserDsaProgress).count()
+        }
+    finally:
+        db.close()
+
 
 @app.route("/api/auth/logout", methods=["POST"])
 def user_logout():

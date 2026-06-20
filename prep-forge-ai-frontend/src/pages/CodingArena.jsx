@@ -303,6 +303,56 @@ export default function CodingArena({ apiBase, authHeaders, problemId, triggerTo
           )}
         </div>
 
+        {review && (
+  <div className="border-t border-white/5 bg-slate-950/40 p-4">
+    <h3 className="text-white font-bold text-lg mb-3">
+      🤖 PrepForge Smart Review
+    </h3>
+
+    <div className="grid grid-cols-2 gap-3 mb-4">
+      <div className="bg-slate-900 p-3 rounded-lg">
+        ✅ Correctness: {review.correctness}/10
+      </div>
+
+      <div className="bg-slate-900 p-3 rounded-lg">
+        📖 Readability: {review.readability}/10
+      </div>
+
+      <div className="bg-slate-900 p-3 rounded-lg">
+        ⚡ Optimization: {review.optimization}/10
+      </div>
+
+      <div className="bg-slate-900 p-3 rounded-lg">
+        💎 Code Quality: {review.code_quality}/10
+      </div>
+    </div>
+
+    <div className="mb-3">
+      <h4 className="font-semibold text-indigo-400 mb-2">
+        Observations
+      </h4>
+
+      {review.observations?.map((obs, index) => (
+        <p key={index} className="text-sm text-slate-300">
+          {obs}
+        </p>
+      ))}
+    </div>
+
+    <div>
+      <h4 className="font-semibold text-indigo-400 mb-2">
+        Suggestions
+      </h4>
+
+      {review.suggestions?.map((sug, index) => (
+        <p key={index} className="text-sm text-slate-300">
+          {sug}
+        </p>
+      ))}
+    </div>
+  </div>
+)}
+
         {/* Editor Footer Action Bar */}
         <div className="p-4 bg-slate-950/60 border-t border-white/5 flex items-center justify-between">
           <button 

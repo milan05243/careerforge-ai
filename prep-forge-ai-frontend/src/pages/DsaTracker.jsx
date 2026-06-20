@@ -157,9 +157,15 @@ export default function DsaTracker({ apiBase, authHeaders, triggerToast, setProb
                               {prob.difficulty}
                             </span>
                           </div>
-                          <a href={prob.leetcode_link} target="_blank" rel="noreferrer" className="text-[10px] text-slate-500 hover:text-indigo-400 flex items-center gap-1 mt-1 font-semibold">
-                            Solve on LeetCode <ExternalLink className="h-2.5 w-2.5" />
-                          </a>
+                          <a
+  href={prob.leetcode_link}
+  target="_blank"
+  rel="noreferrer"
+  className="text-[10px] text-slate-500 hover:text-indigo-400 flex items-center gap-1 mt-1 font-semibold"
+>
+  🔗 LeetCode Practice
+  <ExternalLink className="h-2.5 w-2.5" />
+</a>
                         </div>
                       </div>
 
@@ -184,11 +190,11 @@ export default function DsaTracker({ apiBase, authHeaders, triggerToast, setProb
                         </div>
 
                         <button 
-                          onClick={() => setProblemForArena(prob.id)}
-                          className="btn btn-primary text-xs px-4 py-2 rounded-lg"
-                        >
-                          Workspace
-                        </button>
+  onClick={() => setProblemForArena(prob.id)}
+  className="btn btn-primary text-xs px-4 py-2 rounded-lg flex items-center gap-2"
+>
+  🚀 PrepForge IDE
+</button>
                       </div>
                     </div>
                   ))}

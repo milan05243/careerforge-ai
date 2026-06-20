@@ -795,7 +795,6 @@ def get_interview_history():
 # ----------------------------------------------------
 # CODING ARENA CODE RUNNER / COMPILER
 # ----------------------------------------------------
-
 @app.route("/api/arena/run", methods=["POST"])
 def run_arena_code():
     data = request.get_json() or {}

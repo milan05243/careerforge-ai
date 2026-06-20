@@ -110,7 +110,6 @@ export default function CodingArena({ apiBase, authHeaders, problemId, triggerTo
   const [output, setOutput] = useState('');
   const [error, setError] = useState(null);
   const [showConsole, setShowConsole] = useState(false);
-  const [review, setReview] = useState(null);
 
   const problem = PROBLEM_DETAILS[problemId] || PROBLEM_DETAILS['two-sum'];
 
@@ -146,7 +145,6 @@ export default function CodingArena({ apiBase, authHeaders, problemId, triggerTo
       if (!res.ok) throw new Error('Sandbox compile execution failed');
 
       const data = await res.json();
-      setReview(data.review || null);
       
       if (data.success) {
         setOutput(data.output);
@@ -248,25 +246,24 @@ export default function CodingArena({ apiBase, authHeaders, problemId, triggerTo
       <div className="lg:col-span-7 flex flex-col h-full relative">
         {/* Editor bar select */}
         <div className="p-3 bg-slate-950/40 border-b border-white/5 flex items-center justify-between">
-  <div>
-    <h3 className="text-white font-bold text-sm">
-      🚀 PrepForge IDE
-    </h3>
-    <p className="text-slate-500 text-xs">
-      Write, test and improve your coding solutions.
-    </p>
-  </div>
+          <select 
+            value={lang} 
+            onChange={(e) => setLang(e.target.value)}
+            className="bg-[#0a0d17] border border-white/10 rounded-lg p-1.5 text-white text-xs focus:outline-none focus:border-indigo-500 font-bold uppercase tracking-wider"
+          >
+            <option value="python">Python</option>
+            <option value="cpp">C++</option>
+            <option value="java">Java</option>
+          </select>
 
-  <select
-    value={lang}
-    onChange={(e) => setLang(e.target.value)}
-    className="bg-[#0a0d17] border border-white/10 rounded-lg p-1.5 text-white text-xs focus:outline-none focus:border-indigo-500 font-bold uppercase tracking-wider"
-  >
-    <option value="python">Python</option>
-    <option value="cpp">C++</option>
-    <option value="java">Java</option>
-  </select>
-</div>
+          <button 
+            onClick={() => setCode(problem.templates[lang])}
+            className="text-slate-400 hover:text-white flex items-center gap-1 text-xs font-semibold"
+            title="Reset code template"
+          >
+            <RotateCcw className="h-3.5 w-3.5" /> Reset
+          </button>
+        </div>
 
         {/* Monaco Editor Container */}
         <div className="flex-1 relative bg-[#1e1e1e]">
@@ -285,105 +282,23 @@ export default function CodingArena({ apiBase, authHeaders, problemId, triggerTo
             }}
           />
 
-          <div className="flex-1 p-4 overflow-y-auto">
-
-  <div className="font-mono text-xs whitespace-pre-wrap mb-4">
-    {error ? (
-      <span className="text-rose-400 font-semibold">{error}</span>
-    ) : (
-      <span className="text-emerald-400 font-semibold">{output}</span>
-    )}
-  </div>
-
-  {review && (
-    <div className="bg-slate-900/80 border border-indigo-500/20 rounded-lg p-4">
-      <h3 className="text-indigo-400 font-bold mb-3">
-        🤖 PrepForge Smart Review
-      </h3>
-
-      <div className="grid grid-cols-2 gap-2 text-xs mb-3">
-        <div>✅ Correctness: {review.correctness}/10</div>
-        <div>📖 Readability: {review.readability}/10</div>
-        <div>⚡ Optimization: {review.optimization}/10</div>
-        <div>💎 Code Quality: {review.code_quality}/10</div>
-      </div>
-
-      <div className="mb-2">
-        <p className="text-indigo-300 font-semibold mb-1">
-          Observations
-        </p>
-
-        {review.observations?.map((obs, i) => (
-          <p key={i} className="text-slate-300 text-xs">
-            {obs}
-          </p>
-        ))}
-      </div>
-
-      <div>
-        <p className="text-indigo-300 font-semibold mb-1">
-          Suggestions
-        </p>
-
-        {review.suggestions?.map((sug, i) => (
-          <p key={i} className="text-slate-300 text-xs">
-            {sug}
-          </p>
-        ))}
-      </div>
-    </div>
-  )}
-
-</div>
-        {review && (
-  <div className="border-t border-white/5 bg-slate-950/40 p-4">
-    <h3 className="text-white font-bold text-lg mb-3">
-      🤖 PrepForge Smart Review
-    </h3>
-
-    <div className="grid grid-cols-2 gap-3 mb-4">
-      <div className="bg-slate-900 p-3 rounded-lg">
-        ✅ Correctness: {review.correctness}/10
-      </div>
-
-      <div className="bg-slate-900 p-3 rounded-lg">
-        📖 Readability: {review.readability}/10
-      </div>
-
-      <div className="bg-slate-900 p-3 rounded-lg">
-        ⚡ Optimization: {review.optimization}/10
-      </div>
-
-      <div className="bg-slate-900 p-3 rounded-lg">
-        💎 Code Quality: {review.code_quality}/10
-      </div>
-    </div>
-
-    <div className="mb-3">
-      <h4 className="font-semibold text-indigo-400 mb-2">
-        Observations
-      </h4>
-
-      {review.observations?.map((obs, index) => (
-        <p key={index} className="text-sm text-slate-300">
-          {obs}
-        </p>
-      ))}
-    </div>
-
-    <div>
-      <h4 className="font-semibold text-indigo-400 mb-2">
-        Suggestions
-      </h4>
-
-      {review.suggestions?.map((sug, index) => (
-        <p key={index} className="text-sm text-slate-300">
-          {sug}
-        </p>
-      ))}
-    </div>
-  </div>
-)}
+          {/* Console Overlay Panel */}
+          {showConsole && (
+            <div className="absolute bottom-0 left-0 right-0 h-44 bg-[#0a0f1d] border-t border-white/10 z-40 flex flex-col">
+              <div className="p-2.5 border-b border-white/5 flex items-center justify-between bg-slate-950/20 text-slate-400 text-xs font-bold uppercase tracking-wider">
+                <span className="flex items-center gap-1"><Terminal className="h-4 w-4" /> Console Output</span>
+                <button onClick={() => setShowConsole(false)} className="hover:text-white">&times; Close</button>
+              </div>
+              <div className="flex-1 p-4 font-mono text-xs overflow-y-auto whitespace-pre-wrap">
+                {error ? (
+                  <span className="text-rose-400 font-semibold">{error}</span>
+                ) : (
+                  <span className="text-emerald-400 font-semibold">{output}</span>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* Editor Footer Action Bar */}
         <div className="p-4 bg-slate-950/60 border-t border-white/5 flex items-center justify-between">

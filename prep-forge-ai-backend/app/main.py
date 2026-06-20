@@ -796,82 +796,6 @@ def get_interview_history():
 # CODING ARENA CODE RUNNER / COMPILER
 # ----------------------------------------------------
 
-def generate_code_review(code):
-    review = {
-        "correctness": 8,
-        "readability": 8,
-        "optimization": 8,
-        "code_quality": 8,
-        "observations": [],
-        "suggestions": []
-    }
-
-    code_lower = code.lower()
-
-    # Nested loops detection
-    if code_lower.count("for") >= 2:
-        review["optimization"] = max(4, review["optimization"] - 3)
-        review["observations"].append(
-            "⚠ Multiple loops detected. This may increase time complexity."
-        )
-        review["suggestions"].append(
-            "Consider reducing nested iterations using better data structures."
-        )
-
-    # HashMap detection
-    if (
-        "unordered_map" in code_lower
-        or "hashmap" in code_lower
-        or "dict(" in code_lower
-        or "map<" in code_lower
-    ):
-        review["optimization"] = 10
-        review["observations"].append(
-            "✓ Efficient hash-based lookup detected."
-        )
-
-    # Comments detection
-    if (
-        "//" in code
-        or "#" in code
-        or "/*" in code
-    ):
-        review["readability"] = min(
-            10,
-            review["readability"] + 1
-        )
-        review["observations"].append(
-            "✓ Comments improve code readability."
-        )
-
-    # Meaningful variable names
-    if (
-        "target" in code_lower
-        or "result" in code_lower
-        or "current" in code_lower
-        or "index" in code_lower
-    ):
-        review["code_quality"] = min(
-            10,
-            review["code_quality"] + 1
-        )
-        review["observations"].append(
-            "✓ Meaningful variable names detected."
-        )
-
-    # Long code detection
-    if len(code.splitlines()) > 40:
-        review["suggestions"].append(
-            "Consider breaking large logic into smaller functions."
-        )
-
-    if not review["suggestions"]:
-        review["suggestions"].append(
-            "Code structure looks good. Keep it up!"
-        )
-
-    return review
-
 @app.route("/api/arena/run", methods=["POST"])
 def run_arena_code():
     data = request.get_json() or {}
@@ -882,13 +806,11 @@ def run_arena_code():
     if language.lower() != 'python':
         has_syntax = len(code) > 20
         if has_syntax:
-           review = generate_code_review(code)
-        return jsonify({
-        "success": True,
-        "output": "[INFO] Simulated Compilation successful.\n\nRunning Test Cases...\nTest Case 1: Input: [2,7,11,15], 9 | Output: [0, 1] (Pass)\nTest Case 2: Input: [3,2,4], 6 | Output: [1, 2] (Pass)\n\nAll Test Cases Passed! Ready to submit.",
-        "review": review
-    })
-    else:
+            return jsonify({
+                "success": True,
+                "output": "[INFO] Simulated Compilation successful.\n\nRunning Test Cases...\nTest Case 1: Input: [2,7,11,15], 9 | Output: [0, 1] (Pass)\nTest Case 2: Input: [3,2,4], 6 | Output: [1, 2] (Pass)\n\nAll Test Cases Passed! Ready to submit."
+            })
+        else:
             return jsonify({
                 "success": False,
                 "output": "Compilation Error: Missing function signature or source body."

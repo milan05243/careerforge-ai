@@ -110,6 +110,7 @@ export default function CodingArena({ apiBase, authHeaders, problemId, triggerTo
   const [output, setOutput] = useState('');
   const [error, setError] = useState(null);
   const [showConsole, setShowConsole] = useState(false);
+  const [review, setReview] = useState(null);
 
   const problem = PROBLEM_DETAILS[problemId] || PROBLEM_DETAILS['two-sum'];
 
@@ -145,6 +146,7 @@ export default function CodingArena({ apiBase, authHeaders, problemId, triggerTo
       if (!res.ok) throw new Error('Sandbox compile execution failed');
 
       const data = await res.json();
+      setReview(data.review || null);
       
       if (data.success) {
         setOutput(data.output);

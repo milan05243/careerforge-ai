@@ -50,11 +50,22 @@ window.google.accounts.id.renderButton(
     };
 
     // Retry a couple of times if the script load is delayed
-    const timer = setTimeout(initGoogleGSI, 500);
-    return () => clearTimeout(timer);
-  }, []);
+const timer = setTimeout(initGoogleGSI, 500);
+
+return () => {
+  clearTimeout(timer);
+
+  if (window.google?.accounts?.id) {
+    window.google.accounts.id.cancel();
+  }
+}});
 
   const handleCredentialResponse = async (response) => {
+    const googleBtn = document.getElementById("google-signin-btn");
+
+if (googleBtn) {
+  googleBtn.style.display = "none";
+}
     setLoading(true);
     setError(null);
     try {

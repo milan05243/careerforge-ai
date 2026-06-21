@@ -197,7 +197,10 @@ return () => {
 
             {/* Google authentication button container */}
       <div className="flex flex-col items-center gap-4 py-4 min-h-[120px]">
-  <div id="google-signin-btn" className="flex justify-center" />
+  <div
+  id="google-signin-btn"
+  className={`flex justify-center ${loading ? "hidden" : ""}`}
+/>
 
   {loading && (
     <div className="flex flex-col items-center gap-5 py-6">

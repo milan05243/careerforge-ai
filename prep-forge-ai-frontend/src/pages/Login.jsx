@@ -61,11 +61,7 @@ return () => {
 }});
 
   const handleCredentialResponse = async (response) => {
-    const googleBtn = document.getElementById("google-signin-btn");
 
-if (googleBtn) {
-  googleBtn.style.display = "none";
-}
     setLoading(true);
     setError(null);
     try {
@@ -200,36 +196,31 @@ if (googleBtn) {
             )}
 
             {/* Google authentication button container */}
-            <div className="flex flex-col items-center gap-4 py-4 min-h-[120px]">
-              {loading ? (
-  <div className="flex flex-col items-center gap-5 py-6">
-  <div className="h-14 w-14 rounded-2xl bg-gradient-to-tr from-orange-500 via-amber-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-orange-500/30 animate-pulse">
-    <div className="text-white text-3xl">⚒️</div>
-  </div>
+      <div className="flex flex-col items-center gap-4 py-4 min-h-[120px]">
+  <div id="google-signin-btn" className="flex justify-center" />
 
-  <div className="text-center">
-    <h3 className="text-white font-bold text-lg">
-      Signing you in...
-    </h3>
+  {loading && (
+    <div className="flex flex-col items-center gap-5 py-6">
+      <div className="h-14 w-14 rounded-2xl bg-gradient-to-tr from-orange-500 via-amber-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-orange-500/30 animate-pulse">
+        <div className="text-white text-3xl">⚒️</div>
+      </div>
 
-    <p className="text-slate-400 text-sm mt-1">
-      Preparing your PrepForge workspace
-    </p>
-  </div>
+      <div className="text-center">
+        <h3 className="text-white font-bold text-lg">
+          Signing you in...
+        </h3>
 
-  <div className="w-40 h-1 bg-slate-800 rounded-full overflow-hidden">
-    <div className="h-full w-1/2 bg-gradient-to-r from-indigo-500 to-purple-500 animate-pulse rounded-full" />
-  </div>
+        <p className="text-slate-400 text-sm mt-1">
+          Preparing your PrepForge workspace
+        </p>
+      </div>
+
+      <div className="w-40 h-1 bg-slate-800 rounded-full overflow-hidden">
+        <div className="h-full w-1/2 bg-gradient-to-r from-indigo-500 to-purple-500 animate-pulse rounded-full" />
+      </div>
+    </div>
+  )}
 </div>
-              ) : (
-                <div className="space-y-4">
-                  {/* Google OAuth GSI Button Container */}
-<div id="google-signin-btn" className="flex justify-center" />
-                  
-                  
-                </div>
-              )}
-            </div>
 
             <p className="text-slate-500 text-[10px] leading-relaxed">
               By continuing, you agree to connect your Google profile info (email, name, picture) to save and track your session progress.

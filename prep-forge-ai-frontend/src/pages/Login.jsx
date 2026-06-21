@@ -70,7 +70,7 @@ window.google.accounts.id.renderButton(
       }
 
       const userData = await res.json();
-      triggerToast("Welcome back to PrepForge AI!", "success");
+      // triggerToast("Welcome back to PrepForge AI!", "success");
       onLoginSuccess(userData);
     } catch (err) {
       setError(err.message || "Failed to log in with Google. Please try again.");

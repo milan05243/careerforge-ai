@@ -61,11 +61,7 @@ return () => {
 }});
 
   const handleCredentialResponse = async (response) => {
-    const googleBtn = document.getElementById("google-signin-btn");
-
-if (googleBtn) {
-  googleBtn.style.display = "none";
-}
+    
     setLoading(true);
     setError(null);
     try {
@@ -178,7 +174,7 @@ if (googleBtn) {
           </div>
 
           <div className="text-slate-500 text-xs font-semibold">
-            &copy; 2026 PrepForge AI. Enterprise Placement Accelerator.
+            &copy; PrepForge AI is an open-source placement preparation platform that helps students analyze resumes, practice DSA, prepare for interviews, and track progress in one workspace.
           </div>
         </div>
 
@@ -204,7 +200,7 @@ if (googleBtn) {
               {loading ? (
   <div className="flex flex-col items-center gap-5 py-6">
   <div className="h-14 w-14 rounded-2xl bg-gradient-to-tr from-orange-500 via-amber-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-orange-500/30 animate-pulse">
-    <Hammer className="h-7 w-7 text-white" />
+    <div className="text-white text-3xl">⚒️</div>
   </div>
 
   <div className="text-center">

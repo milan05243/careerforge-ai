@@ -61,7 +61,11 @@ return () => {
 }});
 
   const handleCredentialResponse = async (response) => {
-    
+    const googleBtn = document.getElementById("google-signin-btn");
+
+if (googleBtn) {
+  googleBtn.style.display = "none";
+}
     setLoading(true);
     setError(null);
     try {

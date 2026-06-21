@@ -205,7 +205,7 @@ return () => {
   {loading && (
     <div className="flex flex-col items-center gap-5 py-6">
       <div className="h-14 w-14 rounded-2xl bg-gradient-to-tr from-orange-500 via-amber-500 to-yellow-400 flex items-center justify-center shadow-lg shadow-orange-500/30 animate-pulse">
-        <div className="text-white text-3xl">⚒️</div>
+        <Hammer className="h-8 w-8 text-white" />
       </div>
 
       <div className="text-center">

@@ -202,19 +202,7 @@ window.google.accounts.id.renderButton(
                   {/* Google OAuth GSI Button Container */}
 <div id="google-signin-btn" className="flex justify-center" />
                   
-                  {/* Developer Quick-Login Bypass */}
-                  <div className="relative flex py-2 items-center">
-                    <div className="flex-grow border-t border-white/5"></div>
-                    <span className="flex-shrink mx-3 text-slate-500 text-[10px] font-bold uppercase tracking-wider">Or Dev Sandbox</span>
-                    <div className="flex-grow border-t border-white/5"></div>
-                  </div>
-
-                  <button
-                    onClick={handleMockLogin}
-                    className="w-full py-3 px-4 rounded-full bg-indigo-600/10 hover:bg-indigo-600/20 border border-indigo-500/20 hover:border-indigo-500/35 text-indigo-400 font-bold text-xs uppercase tracking-wider transition-all"
-                  >
-                    Use Developer Profile
-                  </button>
+                  
                 </div>
               )}
             </div>

@@ -194,8 +194,11 @@ window.google.accounts.id.renderButton(
   <div className="flex flex-col items-center gap-3 py-4">
     <div className="h-6 w-6 rounded-full border-2 border-indigo-500/20 border-t-indigo-500 animate-spin" />
     <span className="text-slate-400 text-xs font-medium">
-      Validating Google identity...
+      Signing you in...
     </span>
+    <p className="text-slate-500 text-xs mt-1">
+  Preparing your workspace
+</p>
   </div>
               ) : (
                 <div className="space-y-4">

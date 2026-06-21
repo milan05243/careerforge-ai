@@ -204,19 +204,13 @@ return () => {
 
   {loading && (
     <div className="flex flex-col items-center gap-5 py-6">
-<div className="flex flex-col items-center gap-5 py-6">
-  <div className="h-14 w-14 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 animate-pulse">
-    <span className="text-3xl">✨</span>
-  </div>
-
-  <h3 className="text-white font-bold text-lg">
-    Forging your workspace...
+<div className="flex flex-col items-center justify-center py-10">
+  <h3 className="text-white font-bold text-lg animate-pulse">
+    Preparing your workspace...
   </h3>
 </div>
 
-      <div className="w-40 h-1 bg-slate-800 rounded-full overflow-hidden">
-        <div className="h-full w-1/2 bg-gradient-to-r from-indigo-500 to-purple-500 animate-pulse rounded-full" />
-      </div>
+      
     </div>
   )}
 </div>
